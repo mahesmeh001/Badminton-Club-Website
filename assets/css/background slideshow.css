@@ -56,15 +56,15 @@
     animation-delay: 10s;
 }
 .cb-slideshow li:nth-child(4) span {
-    background-image: url("../../images/background1.jpg");
+    background-image: url("../../images/background4.jpg");
     animation-delay: 15s;
 }
 .cb-slideshow li:nth-child(5) span {
-    background-image: url("../../images/background2.jpg");
+    background-image: url("../../images/background5.JPG");
     animation-delay: 20s;
 }
 .cb-slideshow li:nth-child(6) span {
-    background-image: url("../../images/background3.jpg");
+    background-image: url("../../images/background6.JPG");
     animation-delay: 25s;
 }
 
