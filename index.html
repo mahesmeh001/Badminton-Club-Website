@@ -13,8 +13,45 @@
 		<link rel="stylesheet" href="assets/css/background%20slideshow.css" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 
+
+		<style>
+			/* Add this to your existing CSS file or create a new one */
+			#notification {
+				position: fixed;
+				top: 0px; /* Start off-screen */
+				left: 0;
+				width: 100%;
+				background-color: #333;
+				color: #fff;
+				padding: 10px;
+				box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+				z-index: 999;
+				transition: top 0.5s ease;
+			}
+
+			#notification-content {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+
+			#close-button {
+				background-color: transparent;
+				border: none;
+				color: #fff;
+				cursor: pointer;
+			}
+
+			.hidden {
+				display: none;
+			}
+
+		</style>
+
 	</head>
 	<body class="is-preload">
+
+
 
 
 	<ul id="slideshow" class="cb-slideshow" style="height: 100vh; background-color: black">
@@ -26,8 +63,21 @@
 		<li><span style="filter: brightness(80%)"></span><div><h3></h3></div></li>
 	</ul>
 
+
+	<!--dropdown notif-->
+	<div id="notification" class="hidden">
+		<div id="notification-content">
+			<p>Please note, this website is no longer maintained. Click <a href="https://www.wiscobadminton.com/">here</a> to find the new website!</p>
+			<button id="close-button"><p style="color: white">Close</p></button>
+		</div>
+	</div>
+
+
 		<!-- Header -->
 			<section id="header">
+
+
+
 				<header class="w3-centered">
 					<div style="border-bottom: white; margin-top: 10%">
 						<h1>UW-Madison</h1>
@@ -275,6 +325,28 @@
 			</section>
 
 		<!-- Scripts -->
+			<script>
+				const notification = document.getElementById("notification");
+				const closeButton = document.getElementById("close-button");
+
+				// Function to show the notification
+				function showNotification() {
+					notification.classList.remove("hidden");
+				}
+
+				// Function to hide the notification
+				function hideNotification() {
+					notification.classList.add("hidden");
+				}
+
+				// Show the notification on page load
+				showNotification();
+
+				// Close button click event handler
+				closeButton.addEventListener("click", function () {
+					hideNotification();
+				});
+			</script>
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
